@@ -3,12 +3,12 @@ feeds:
     name: "Frontpage Support"
     description: "The Frontpage Support feed."
     allow:
-      - did:plc:naxgru5hoiqlaosuneywxuxz
-      - did:plc:2xau7wbgdq4phuou2ypwuen7
-      - did:plc:lhldvebr3louno6ylqen3u2x
-      - did:plc:fdf3zzst2hwcbqvdnjcxubki
-      - did:plc:hjhhs7pnc3eoii2xpyvwcsge
-      - did:plc:3ov53se5dtzvqtto27vxpcp3
+      - did:plc:naxgru5hoiqlaosuneywxuxz # feeds.unravel.fyi
+      - did:plc:2xau7wbgdq4phuou2ypwuen7 # Tom
+      - did:plc:lhldvebr3louno6ylqen3u2x # Will
+      - did:plc:fdf3zzst2hwcbqvdnjcxubki # Jake
+      - did:plc:hjhhs7pnc3eoii2xpyvwcsge # Damien
+      - did:plc:3ov53se5dtzvqtto27vxpcp3 # Tim
     deny: "at://did:plc:4acsffvbo4niovge362ptijz/app.bsky.feed.post/3la5bsyzj3j23"
     matchers:
       - path: "$.did"
