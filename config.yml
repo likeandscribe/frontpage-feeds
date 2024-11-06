@@ -1,0 +1,21 @@
+feeds:
+  - uri: "at://did:plc:naxgru5hoiqlaosuneywxuxz/app.bsky.feed.generator/fp-support"
+    name: "Frontpage Support"
+    description: "The Frontpage Support feed."
+    allow:
+      - did:plc:naxgru5hoiqlaosuneywxuxz
+      - did:plc:2xau7wbgdq4phuou2ypwuen7
+    deny: "at://did:plc:4acsffvbo4niovge362ptijz/app.bsky.feed.post/3la5bsyzj3j23"
+    matchers:
+      - path: "$.did"
+        value: "did:plc:tgudj2fjm77pzkuawquqhsxm"
+        type: equal
+      - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#tag')].tag"
+        values: ["smoke", "signal"]
+        type: sequence
+      - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#link')].uri"
+        value: "https://smokesignal.events/"
+        type: prefix
+      - path: "$.commit.record.embed.external.uri"
+        value: "https://smokesignal.events/"
+        type: prefix

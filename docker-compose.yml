@@ -1,0 +1,14 @@
+services:
+  supercell:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - db:/var/lib/supercell/db
+    env_file:
+      - dev.env
+
+volumes:
+  db:

@@ -1,0 +1,36 @@
+# fly.toml app configuration file generated for frontpage-feeds on 2024-11-06T11:48:09Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'frontpage-feeds'
+primary_region = 'ewr'
+
+[build]
+
+[[mounts]]
+source = 'feeds'
+destination = '/var/lib/supercell/db'
+
+[[services]]
+
+[http_service]
+internal_port = 8080
+force_https = true
+auto_stop_machines = "off"
+auto_start_machines = true
+min_machines_running = 1
+processes = ['app']
+
+
+[[vm]]
+memory = '256MB'
+cpu_kind = 'shared'
+cpus = 1
+
+[env]
+HTTP_PORT = '8080'
+EXTERNAL_BASE = 'feeds.unravel.fyi'
+JETSTREAM_HOSTNAME = "jetstream1.us-east.bsky.network"
+CONSUMER_TASK_ENABLE = "true"
+FEEDS = '/var/lib/supercell/config.yml'

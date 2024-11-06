@@ -1,0 +1,5 @@
+# flyctl launch added from .gitignore
+**/development.db
+fly.toml
+docker-compose.yml
+dev.env
