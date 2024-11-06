@@ -4,13 +4,13 @@ RUN cargo install sqlx-cli@0.8.2 --no-default-features --features sqlite
 RUN cargo install sccache --version ^0.8
 ENV RUSTC_WRAPPER=sccache SCCACHE_DIR=/sccache
 
-RUN curl https://github.com/bluesky-social/jetstream/raw/0ab10bd041fe1fdf682d3964b20d944905c4862d/pkg/models/zstd_dictionary -L -o supercell.zip && unzip supercell.zip
+RUN curl https://github.com/astrenoxcoop/supercell/archive/refs/tags/0.1.2.zip -L -o supercell.zip && unzip supercell.zip
 
 RUN mv supercell-0.1.2 /app
 
 WORKDIR /app
 
-RUN curl https://github.com/bluesky-social/jetstream/raw/refs/heads/main/pkg/models/zstd_dictionary -L -o ./jetstream_zstd_dictionary
+RUN curl https://github.com/bluesky-social/jetstream/raw/0ab10bd041fe1fdf682d3964b20d944905c4862d/pkg/models/zstd_dictionary -L -o ./jetstream_zstd_dictionary
 
 RUN --mount=type=cache,target=/app/target/ \
   --mount=type=cache,target=$SCCACHE_DIR,sharing=locked \
