@@ -17,6 +17,9 @@ feeds:
       - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#link')].uri"
         value: "https://frontpage.fyi"
         type: prefix
+      - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#link')].uri"
+        value: "http://frontpage.fyi"
+        type: prefix
       - path: "$.commit.record.embed.external.uri"
         value: "https://frontpage.fyi"
         type: prefix
