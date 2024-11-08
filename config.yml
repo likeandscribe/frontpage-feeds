@@ -11,6 +11,9 @@ feeds:
       - did:plc:3ov53se5dtzvqtto27vxpcp3 # Tim
     deny: "at://did:plc:4acsffvbo4niovge362ptijz/app.bsky.feed.post/3la5bsyzj3j23"
     matchers:
+      - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#tag')].tag"
+        values: ["frontpage.fyi"]
+        type: sequence
       - path: "$.commit.record.text"
         values: ["frontpage.fyi"]
         type: sequence
