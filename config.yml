@@ -20,6 +20,9 @@ feeds:
       - path: "$.commit.record.embed.external.uri"
         value: "https://frontpage.fyi"
         type: prefix
+      - path: "$.commit.record.embed.external.uri"
+        value: "http://frontpage.fyi"
+        type: prefix
       - path: "$.commit.record.facets[*].features[?(@['$type'] == 'app.bsky.richtext.facet#mention')].did"
         value: "did:plc:klmr76mpewpv7rtm3xgpzd7x"
         type: equal
